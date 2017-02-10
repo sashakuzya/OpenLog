@@ -1,2 +1,2 @@
 # OpenLog
-Open Sourwce HAM Radio logbook
+Open Source HAM Radio logbook
