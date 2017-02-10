@@ -11,9 +11,9 @@ QthLocator::QthLocator(QObject *parent) : QObject(parent)
 }
 
 /*!
- * \brief setMyQthLocator
- * \param qthLocator
- * \return
+ * \brief Set my QTH locator
+ * \param String - QTH locator
+ * \return Operation status. TRUE = SUCCESS
  */
 bool QthLocator::setMyLocator(QString qthLocator)
 {
@@ -26,8 +26,8 @@ bool QthLocator::setMyLocator(QString qthLocator)
 }
 
 /*!
- * \brief myQthLocator
- * \return
+ * \brief Return my QTH locator
+ * \return String - QTH locator
  */
 QString QthLocator::myLocator()
 {
@@ -35,10 +35,11 @@ QString QthLocator::myLocator()
 }
 
 /*!
- * \brief qthLocatorNormalyse
- * \param qthLocator
- * \param isOk
- * \return
+ * \brief Normalyse QTH locator string
+ * \param qthLocator Input QTH locator string (not normalysed)
+ * \param isOk Operation result flag. TRUE = SUCCESS
+ * \return Normalysed QTH locator string (if operation successed) ar empty
+ * string (is operation WRONG)
  */
 QString QthLocator::normalyse(QString qthLocator, bool* isOk)
 {
@@ -72,9 +73,9 @@ QString QthLocator::normalyse(QString qthLocator, bool* isOk)
 }
 
 /*!
- * \brief isLocatorCorrect
- * \param qthLocator
- * \return
+ * \brief Check locator for correct
+ * \param String - QTH locator
+ * \return Result. TRUE = locator is correct.
  */
 bool QthLocator::isCorrect(QString qthLocator)
 {
@@ -105,10 +106,10 @@ bool QthLocator::isCorrect(QString qthLocator)
 }
 
 /*!
- * \brief coordinateToLocator
- * \param coordinate
- * \param isOk
- * \return
+ * \brief Convert geographical coordinates to QTH locator
+ * \param coordinate Coordinates struct
+ * \param isOk Pointer to operation result
+ * \return String - QTH locator
  */
 QString QthLocator::coordinateToLocator(Coordinate coordinate, bool* isOk)
 {
@@ -146,10 +147,10 @@ QString QthLocator::coordinateToLocator(Coordinate coordinate, bool* isOk)
 }
 
 /*!
- * \brief locatorToCoordinate
- * \param qthLocator
- * \param isOk
- * \return
+ * \brief Convert QTH locator to geographical coordinates
+ * \param qthLocator String - QTH locator
+ * \param isOk Pointer to operation result flag
+ * \return Coordinates
  */
 Coordinate QthLocator::locatorToCoordinate(QString qthLocator, bool* isOk)
 {
@@ -179,10 +180,10 @@ Coordinate QthLocator::locatorToCoordinate(QString qthLocator, bool* isOk)
 }
 
 /*!
- * \brief distance
- * \param from
- * \param to
- * \return
+ * \brief Calculate distance betwen two coordinate points
+ * \param from First point
+ * \param to Second point
+ * \return Distance
  */
 double QthLocator::distance(Coordinate from, Coordinate to)
 {
@@ -199,10 +200,10 @@ double QthLocator::distance(Coordinate from, Coordinate to)
 }
 
 /*!
- * \brief distance
- * \param fromLocator
- * \param toLocator
- * \return
+ * \brief Calculate distance betwen two QTH locators
+ * \param fromLocator First locator
+ * \param toLocator Second locator
+ * \return Distance
  */
 double QthLocator::distance(QString fromLocator, QString toLocator)
 {
@@ -217,9 +218,9 @@ double QthLocator::distance(QString fromLocator, QString toLocator)
 }
 
 /*!
- * \brief QthLocator::distance
- * \param toQthLocator
- * \return
+ * \brief Distance betwen my position anl some QTH locator
+ * \param toQthLocator Remote QTH locator
+ * \return Distance
  */
 double QthLocator::distance(QString toQthLocator)
 {
