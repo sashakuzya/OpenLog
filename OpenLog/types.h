@@ -1,3 +1,8 @@
+#ifndef TYPES_H
+#define TYPES_H
+
+#include <QString>
+#include <QDateTime>
 
 struct QSO{
 	QString callsign;
@@ -13,3 +18,7 @@ struct QSO{
 	bool qslCardReceved;
 	QString note;
 };
+
+#endif
+
+/* END OF FILE */
