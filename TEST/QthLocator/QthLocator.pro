@@ -1,6 +1,5 @@
-QT += core
+QT += core testlib
 QT -= gui
-QT += testlib
 
 CONFIG += c++11
 

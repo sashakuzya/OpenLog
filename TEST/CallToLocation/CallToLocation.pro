@@ -1,4 +1,4 @@
-QT += core
+QT += core testlib
 QT -= gui
 
 CONFIG += c++11
@@ -9,8 +9,9 @@ CONFIG -= app_bundle
 
 TEMPLATE = app
 
-SOURCES += main.cpp \
-    ../../OpenLog/calltolocation.cpp
+SOURCES += \
+    ../../OpenLog/calltolocation.cpp \
+    test_calltolocation.cpp
 
 HEADERS += \
     ../../OpenLog/calltolocation.h
